@@ -4,10 +4,13 @@ using NssfTechInterview.BusinessLogic;
 
 BusinessLogic logic = new BusinessLogic();
 
-var list = logic.GetCombinations(4, 2);
+int n = 9;
+ZeroEvenOdd zeroEvenOdd = new ZeroEvenOdd(n);
 
-// Print the results
-foreach (var combination in list)
-{
-    Console.Write("[" + string.Join(",", combination) + "]");
-}
+// Run all threads in parallel
+Task t1 = Task.Run(() => zeroEvenOdd.Zero(Console.Write));
+Task t2 = Task.Run(() => zeroEvenOdd.Even(Console.Write));
+Task t3 = Task.Run(() => zeroEvenOdd.Odd(Console.Write));
+
+Task.WaitAll(t1, t2, t3);
+Console.WriteLine(); // Move to next line after output
