@@ -8,6 +8,13 @@ namespace questionthree.Routes
     public static class TicketLineRoute
     {
 
+        /// <summary>
+        /// Configures API endpoints for ticket reservation, confirmation, and purchase retrieval in the application.
+        /// </summary>
+        /// <remarks>This method registers endpoints for reserving tickets, confirming reservations, and
+        /// retrieving purchase information. It should be called during application startup to enable these routes. The
+        /// confirmation endpoint also triggers background notification processing for completed purchases.</remarks>
+        /// <param name="app">The <see cref="WebApplication"/> instance to which the ticket-related routes will be mapped.</param>
         public static void MapTicketLineRoutes(this WebApplication app)
         {
 

@@ -10,5 +10,5 @@
 
 ## The application uses an in-memory list to store ticket reservations and purchases for demonstration purposes.
 
-## As well as a simulated background that processes completed reservations into purchases.Sending out would be emails.
+## As well as a simulated background service that processes completed reservations into purchases.Sending out would be emails.
 
