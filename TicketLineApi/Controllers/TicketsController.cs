@@ -6,7 +6,7 @@ using NssfTechInterview.Service;
 namespace TicketLineApi.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/V1/[controller]")]
     public class TicketsController : ControllerBase
     {
         private readonly ITicketService _service;
@@ -22,7 +22,7 @@ namespace TicketLineApi.Controllers
         {
             var reservation = _service.ReserveTickets(request);
 
-            return Ok(reservation);
+            return Ok(new { Message = "Reservation successful!" });
         }
 
         // 2️⃣ Complete payment

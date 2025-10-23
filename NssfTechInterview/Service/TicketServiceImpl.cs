@@ -20,6 +20,7 @@ namespace NssfTechInterview.Service
 
         public TicketReservation ReserveTickets(TicketReservationRequest request)
         {
+
             var total = request.Quantity * request.PricePerTicket;
 
             var reservation = new TicketReservation
@@ -31,6 +32,7 @@ namespace NssfTechInterview.Service
             };
 
             TicketRepository.Add(reservation);
+
             return reservation;
         }
 

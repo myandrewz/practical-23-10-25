@@ -13,7 +13,8 @@ namespace NssfTechInterview.Utils
         {
             Pending,
             Paid,
-            Cancelled
+            Cancelled,
+            Failed
         }
     }
 }
