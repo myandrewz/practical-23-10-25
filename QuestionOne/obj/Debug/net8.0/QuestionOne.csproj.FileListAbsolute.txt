@@ -1,0 +1,14 @@
+C:\work\nutter-tools\madness\questionone\QuestionOne\QuestionOne\bin\Debug\net8.0\QuestionOne.exe
+C:\work\nutter-tools\madness\questionone\QuestionOne\QuestionOne\bin\Debug\net8.0\QuestionOne.deps.json
+C:\work\nutter-tools\madness\questionone\QuestionOne\QuestionOne\bin\Debug\net8.0\QuestionOne.runtimeconfig.json
+C:\work\nutter-tools\madness\questionone\QuestionOne\QuestionOne\bin\Debug\net8.0\QuestionOne.dll
+C:\work\nutter-tools\madness\questionone\QuestionOne\QuestionOne\bin\Debug\net8.0\QuestionOne.pdb
+C:\work\nutter-tools\madness\questionone\QuestionOne\QuestionOne\obj\Debug\net8.0\QuestionOne.GeneratedMSBuildEditorConfig.editorconfig
+C:\work\nutter-tools\madness\questionone\QuestionOne\QuestionOne\obj\Debug\net8.0\QuestionOne.AssemblyInfoInputs.cache
+C:\work\nutter-tools\madness\questionone\QuestionOne\QuestionOne\obj\Debug\net8.0\QuestionOne.AssemblyInfo.cs
+C:\work\nutter-tools\madness\questionone\QuestionOne\QuestionOne\obj\Debug\net8.0\QuestionOne.csproj.CoreCompileInputs.cache
+C:\work\nutter-tools\madness\questionone\QuestionOne\QuestionOne\obj\Debug\net8.0\QuestionOne.dll
+C:\work\nutter-tools\madness\questionone\QuestionOne\QuestionOne\obj\Debug\net8.0\refint\QuestionOne.dll
+C:\work\nutter-tools\madness\questionone\QuestionOne\QuestionOne\obj\Debug\net8.0\QuestionOne.pdb
+C:\work\nutter-tools\madness\questionone\QuestionOne\QuestionOne\obj\Debug\net8.0\QuestionOne.genruntimeconfig.cache
+C:\work\nutter-tools\madness\questionone\QuestionOne\QuestionOne\obj\Debug\net8.0\ref\QuestionOne.dll
