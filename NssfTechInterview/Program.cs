@@ -9,5 +9,5 @@ var list = logic.GetCombinations(4, 2);
 // Print the results
 foreach (var combination in list)
 {
-    Console.WriteLine("[" + string.Join(",", combination) + "]");
+    Console.Write("[" + string.Join(",", combination) + "]");
 }
