@@ -1,0 +1,57 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:16-alpine
+    container_name: ticketline-db
+    environment:
+      POSTGRES_DB: tickets_db
+      POSTGRES_USER: ticketline_user
+      POSTGRES_PASSWORD: ticketline_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ticketline_user -d tickets_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - ticketline-network
+
+  # TicketLine API
+  ticketline-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ticketline-api
+    environment:
+      SPRING_PROFILE: production
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_NAME: tickets_db
+      DB_USERNAME: ticketline_user
+      DB_PASSWORD: ticketline_password
+      JWT_SECRET: ThisIsAVeryLongSecretKeyForJWTTokenGenerationAndValidationPurposesOnly123456789ChangeThisInProduction
+      JWT_EXPIRATION: 3600000
+      SERVER_PORT: 8080
+      TICKET_RESERVATION_EXPIRATION_MINUTES: 15
+      SPRING_PROFILES_ACTIVE: prod
+    ports:
+      - "8080:8080"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - ticketline-network
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+    driver: local
+
+networks:
+  ticketline-network:
+    driver: bridge

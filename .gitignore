@@ -34,5 +34,18 @@ build/
 ### VS Code ###
 .vscode/
 
-mvnw
-mvnw.cmd
+### Environment Variables ###
+.env
+.env.local
+.env.production
+
+### Docker ###
+docker-compose.override.yml
+
+### Logs ###
+*.log
+logs/
+
+### OS ###
+.DS_Store
+Thumbs.db

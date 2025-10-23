@@ -58,6 +58,7 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.GET, "/api/events/**").permitAll()
                         .requestMatchers("/swagger-ui/**", "/v3/api-docs/**", "/swagger-ui.html").permitAll()
                         .requestMatchers("/h2-console/**").permitAll()
+                        .requestMatchers("/actuator/health/**", "/actuator/info/**").permitAll()
 
                         // Admin only endpoints
                         .requestMatchers(HttpMethod.POST, "/api/events").hasRole("ADMIN")
