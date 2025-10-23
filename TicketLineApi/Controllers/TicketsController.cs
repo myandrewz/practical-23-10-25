@@ -40,7 +40,7 @@ namespace TicketLineApi.Controllers
                     ExpiresIn = 3600 // seconds
                 });
             }
-            return Unauthorized();
+            return Unauthorized(new { Message = "Invalid credentials supplied" });
 
         }
 
