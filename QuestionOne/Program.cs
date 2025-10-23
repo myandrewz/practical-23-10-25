@@ -12,7 +12,7 @@ static void Run()
 
 }
 
-static string FormatResult(IList<IList<int>> result)
+static string FormatResult(List<List<int>> result)
 {
     var combinations = new List<string>();
     foreach (var combo in result)
@@ -25,14 +25,14 @@ static string FormatResult(IList<IList<int>> result)
 
 public class Combinator
 {
-    public IList<IList<int>> Combine(int n, int k)
+    public List<List<int>> Combine(int n, int k)
     {
-        IList<IList<int>> result = new List<IList<int>>();
-        Backtrack(1, n, k, new List<int>(), result);
+        List<List<int>> result = new List<List<int>>();
+        Recurse(1, n, k, new List<int>(), result);
         return result;
     }
 
-    private void Backtrack(int start, int n, int k, List<int> path, IList<IList<int>> result)
+    private void Recurse(int start, int n, int k, List<int> path, List<List<int>> result)
     {
         if (path.Count == k)
         {
@@ -43,7 +43,7 @@ public class Combinator
         for (int i = start; i <= n; i++)
         {
             path.Add(i);
-            Backtrack(i + 1, n, k, path, result);
+            Recurse(i + 1, n, k, path, result);
             path.RemoveAt(path.Count - 1);
         }
     }

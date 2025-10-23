@@ -12,3 +12,4 @@ C:\work\nutter-tools\madness\questionone\QuestionOne\QuestionOne\obj\Debug\net8.
 C:\work\nutter-tools\madness\questionone\QuestionOne\QuestionOne\obj\Debug\net8.0\QuestionOne.pdb
 C:\work\nutter-tools\madness\questionone\QuestionOne\QuestionOne\obj\Debug\net8.0\QuestionOne.genruntimeconfig.cache
 C:\work\nutter-tools\madness\questionone\QuestionOne\QuestionOne\obj\Debug\net8.0\ref\QuestionOne.dll
+C:\work\nutter-tools\madness\questionone\QuestionOne\QuestionOne\obj\Debug\net8.0\QuestionOne.sourcelink.json
