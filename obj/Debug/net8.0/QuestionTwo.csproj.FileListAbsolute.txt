@@ -1,0 +1,14 @@
+C:\work\nutter-tools\madness\questiontwo\QuestionTwo\bin\Debug\net8.0\QuestionTwo.exe
+C:\work\nutter-tools\madness\questiontwo\QuestionTwo\bin\Debug\net8.0\QuestionTwo.deps.json
+C:\work\nutter-tools\madness\questiontwo\QuestionTwo\bin\Debug\net8.0\QuestionTwo.runtimeconfig.json
+C:\work\nutter-tools\madness\questiontwo\QuestionTwo\bin\Debug\net8.0\QuestionTwo.dll
+C:\work\nutter-tools\madness\questiontwo\QuestionTwo\bin\Debug\net8.0\QuestionTwo.pdb
+C:\work\nutter-tools\madness\questiontwo\QuestionTwo\obj\Debug\net8.0\QuestionTwo.GeneratedMSBuildEditorConfig.editorconfig
+C:\work\nutter-tools\madness\questiontwo\QuestionTwo\obj\Debug\net8.0\QuestionTwo.AssemblyInfoInputs.cache
+C:\work\nutter-tools\madness\questiontwo\QuestionTwo\obj\Debug\net8.0\QuestionTwo.AssemblyInfo.cs
+C:\work\nutter-tools\madness\questiontwo\QuestionTwo\obj\Debug\net8.0\QuestionTwo.csproj.CoreCompileInputs.cache
+C:\work\nutter-tools\madness\questiontwo\QuestionTwo\obj\Debug\net8.0\QuestionTwo.dll
+C:\work\nutter-tools\madness\questiontwo\QuestionTwo\obj\Debug\net8.0\refint\QuestionTwo.dll
+C:\work\nutter-tools\madness\questiontwo\QuestionTwo\obj\Debug\net8.0\QuestionTwo.pdb
+C:\work\nutter-tools\madness\questiontwo\QuestionTwo\obj\Debug\net8.0\QuestionTwo.genruntimeconfig.cache
+C:\work\nutter-tools\madness\questiontwo\QuestionTwo\obj\Debug\net8.0\ref\QuestionTwo.dll
