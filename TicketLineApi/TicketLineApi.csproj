@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\NssfTechInterview\NssfTechInterview.csproj" />
+    <ProjectReference Include="..\NssfTechInterview\TicketLine.csproj" />
   </ItemGroup>
 
   <ItemGroup>

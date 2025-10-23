@@ -1,6 +1,0 @@
-@TicketLineApi_HostAddress = http://localhost:5235
-
-GET {{TicketLineApi_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###

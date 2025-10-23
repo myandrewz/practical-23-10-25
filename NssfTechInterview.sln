@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.13.35919.96 d17.13
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NssfTechInterview", "NssfTechInterview\NssfTechInterview.csproj", "{0AEAF119-24BA-4B4E-B0B4-E066D2271169}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicketLine", "NssfTechInterview\TicketLine.csproj", "{0AEAF119-24BA-4B4E-B0B4-E066D2271169}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicketLineApi", "TicketLineApi\TicketLineApi.csproj", "{52A253AB-7F5A-42AD-96CA-8B724B4829A5}"
 EndProject
