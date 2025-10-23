@@ -15,4 +15,8 @@
     <ProjectReference Include="..\NssfTechInterview\NssfTechInterview.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Helper\" />
+  </ItemGroup>
+
 </Project>

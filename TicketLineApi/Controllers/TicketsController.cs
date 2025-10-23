@@ -39,8 +39,6 @@ namespace TicketLineApi.Controllers
                     Token = tokenString,
                     ExpiresIn = 3600 // seconds
                 });
-
-               
             }
             return Unauthorized();
 
