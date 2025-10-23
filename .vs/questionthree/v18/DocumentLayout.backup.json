@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\work\\nutter-tools\\madness\\questionthree\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{99BF5383-61C7-F8FE-759A-E38E551ECD97}|questionthree.csproj|c:\\work\\nutter-tools\\madness\\questionthree\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{99BF5383-61C7-F8FE-759A-E38E551ECD97}|questionthree.csproj|solutionrelative:readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{99BF5383-61C7-F8FE-759A-E38E551ECD97}|questionthree.csproj|c:\\work\\nutter-tools\\madness\\questionthree\\routes\\ticketlineroute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{99BF5383-61C7-F8FE-759A-E38E551ECD97}|questionthree.csproj|solutionrelative:routes\\ticketlineroute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{99BF5383-61C7-F8FE-759A-E38E551ECD97}|questionthree.csproj|c:\\work\\nutter-tools\\madness\\questionthree\\services\\notificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{99BF5383-61C7-F8FE-759A-E38E551ECD97}|questionthree.csproj|solutionrelative:services\\notificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{99BF5383-61C7-F8FE-759A-E38E551ECD97}|questionthree.csproj|c:\\work\\nutter-tools\\madness\\questionthree\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
-      "RelativeMoniker": "D:0:0:{99BF5383-61C7-F8FE-759A-E38E551ECD97}|questionthree.csproj|solutionrelative:readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{99BF5383-61C7-F8FE-759A-E38E551ECD97}|questionthree.csproj|c:\\work\\nutter-tools\\madness\\questionthree\\questionthree.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
@@ -54,28 +54,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 0,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "readme.md",
               "DocumentMoniker": "C:\\work\\nutter-tools\\madness\\questionthree\\readme.md",
               "RelativeDocumentMoniker": "readme.md",
               "ToolTip": "C:\\work\\nutter-tools\\madness\\questionthree\\readme.md",
               "RelativeToolTip": "readme.md",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
               "WhenOpened": "2025-10-23T07:42:02.536Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "NotificationService.cs",
               "DocumentMoniker": "C:\\work\\nutter-tools\\madness\\questionthree\\Services\\NotificationService.cs",
               "RelativeDocumentMoniker": "Services\\NotificationService.cs",
@@ -83,8 +79,7 @@
               "RelativeToolTip": "Services\\NotificationService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-23T07:08:48.004Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-23T07:08:48.004Z"
             },
             {
               "$type": "Document",
@@ -96,8 +91,7 @@
               "RelativeToolTip": "Services\\PurchaseService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-23T07:08:14.463Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-23T07:08:14.463Z"
             },
             {
               "$type": "Document",
@@ -109,12 +103,11 @@
               "RelativeToolTip": "Services\\ReservationService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-23T07:04:17.507Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-23T07:04:17.507Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "TicketLineRoute.cs",
               "DocumentMoniker": "C:\\work\\nutter-tools\\madness\\questionthree\\Routes\\TicketLineRoute.cs",
               "RelativeDocumentMoniker": "Routes\\TicketLineRoute.cs",
@@ -135,21 +128,19 @@
               "RelativeToolTip": "Models\\Purchase.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-23T07:02:54.618Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-23T07:02:54.618Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "questionthree",
+              "Title": "questionthree.csproj",
               "DocumentMoniker": "C:\\work\\nutter-tools\\madness\\questionthree\\questionthree.csproj",
               "RelativeDocumentMoniker": "questionthree.csproj",
               "ToolTip": "C:\\work\\nutter-tools\\madness\\questionthree\\questionthree.csproj",
               "RelativeToolTip": "questionthree.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-10-23T06:55:57.561Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-23T06:55:57.561Z"
             },
             {
               "$type": "Document",
@@ -161,8 +152,7 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAAB4AAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-23T06:53:40.009Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-23T06:53:40.009Z"
             },
             {
               "$type": "Document",
@@ -174,8 +164,7 @@
               "RelativeToolTip": "Models\\Reservation.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-23T07:02:41.67Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-23T07:02:41.67Z"
             },
             {
               "$type": "Document",
@@ -187,8 +176,7 @@
               "RelativeToolTip": "Database\\AppDbContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-23T07:02:35.188Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-23T07:02:35.188Z"
             },
             {
               "$type": "Document",
@@ -200,8 +188,11 @@
               "RelativeToolTip": "Models\\OutboxEvent.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-23T07:03:04.34Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-23T07:03:04.34Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             }
           ]
         }
