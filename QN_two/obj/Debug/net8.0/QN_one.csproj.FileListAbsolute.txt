@@ -1,0 +1,14 @@
+C:\KALIBATTA\NSSF\Interview\QN1\QN_one\QN_one\bin\Debug\net8.0\QN_one.exe
+C:\KALIBATTA\NSSF\Interview\QN1\QN_one\QN_one\bin\Debug\net8.0\QN_one.deps.json
+C:\KALIBATTA\NSSF\Interview\QN1\QN_one\QN_one\bin\Debug\net8.0\QN_one.runtimeconfig.json
+C:\KALIBATTA\NSSF\Interview\QN1\QN_one\QN_one\bin\Debug\net8.0\QN_one.dll
+C:\KALIBATTA\NSSF\Interview\QN1\QN_one\QN_one\bin\Debug\net8.0\QN_one.pdb
+C:\KALIBATTA\NSSF\Interview\QN1\QN_one\QN_one\obj\Debug\net8.0\QN_one.GeneratedMSBuildEditorConfig.editorconfig
+C:\KALIBATTA\NSSF\Interview\QN1\QN_one\QN_one\obj\Debug\net8.0\QN_one.AssemblyInfoInputs.cache
+C:\KALIBATTA\NSSF\Interview\QN1\QN_one\QN_one\obj\Debug\net8.0\QN_one.AssemblyInfo.cs
+C:\KALIBATTA\NSSF\Interview\QN1\QN_one\QN_one\obj\Debug\net8.0\QN_one.csproj.CoreCompileInputs.cache
+C:\KALIBATTA\NSSF\Interview\QN1\QN_one\QN_one\obj\Debug\net8.0\QN_one.dll
+C:\KALIBATTA\NSSF\Interview\QN1\QN_one\QN_one\obj\Debug\net8.0\refint\QN_one.dll
+C:\KALIBATTA\NSSF\Interview\QN1\QN_one\QN_one\obj\Debug\net8.0\QN_one.pdb
+C:\KALIBATTA\NSSF\Interview\QN1\QN_one\QN_one\obj\Debug\net8.0\QN_one.genruntimeconfig.cache
+C:\KALIBATTA\NSSF\Interview\QN1\QN_one\QN_one\obj\Debug\net8.0\ref\QN_one.dll

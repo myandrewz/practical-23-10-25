@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36511.14 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QN_two", "QN_two\QN_two.csproj", "{5768421B-1A39-5363-83FE-75CC95B74A6F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QN_one", "QN_one\QN_one.csproj", "{C911A24A-20AD-4AB9-8728-CBE151ECF7EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QN_three", "QN_three\QN_three.csproj", "{9CA9242D-990A-4DAE-83C2-16FE23F8219F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5768421B-1A39-5363-83FE-75CC95B74A6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5768421B-1A39-5363-83FE-75CC95B74A6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5768421B-1A39-5363-83FE-75CC95B74A6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5768421B-1A39-5363-83FE-75CC95B74A6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C911A24A-20AD-4AB9-8728-CBE151ECF7EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C911A24A-20AD-4AB9-8728-CBE151ECF7EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C911A24A-20AD-4AB9-8728-CBE151ECF7EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C911A24A-20AD-4AB9-8728-CBE151ECF7EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CA9242D-990A-4DAE-83C2-16FE23F8219F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CA9242D-990A-4DAE-83C2-16FE23F8219F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CA9242D-990A-4DAE-83C2-16FE23F8219F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CA9242D-990A-4DAE-83C2-16FE23F8219F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9AA80C45-34BB-489B-899D-F1ADF8178242}
+	EndGlobalSection
+EndGlobal

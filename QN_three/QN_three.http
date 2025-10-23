@@ -1,0 +1,6 @@
+@QN_three_HostAddress = http://localhost:5230
+
+GET {{QN_three_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
