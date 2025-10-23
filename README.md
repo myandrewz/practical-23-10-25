@@ -448,7 +448,7 @@ java -jar target/ticket-line-0.0.1-SNAPSHOT.jar
 
 ## License
 
-This project is developed for educational purposes.
+This project is developed for a practical interview at NSSF Uganda.
 
 ## Support
 
