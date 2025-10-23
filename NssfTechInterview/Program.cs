@@ -2,8 +2,6 @@
 using NssfTechInterview.BusinessLogic;
 
 
-BusinessLogic logic = new BusinessLogic();
-
 int n = 9;
 ZeroEvenOdd zeroEvenOdd = new ZeroEvenOdd(n);
 
