@@ -1,0 +1,806 @@
+openapi: 3.0.3
+info:
+  title: TicketLine Conference Booking API
+  version: 1.0.0
+  description: A comprehensive API for booking conference tickets with multi-step
+    checkout process.
+paths:
+  /api/attendees/:
+    get:
+      operationId: attendees_list
+      description: API endpoint to list all attendees
+      parameters:
+      - name: ordering
+        required: false
+        in: query
+        description: Which field to use when ordering the results.
+        schema:
+          type: string
+      - name: page
+        required: false
+        in: query
+        description: A page number within the paginated result set.
+        schema:
+          type: integer
+      - name: search
+        required: false
+        in: query
+        description: A search term.
+        schema:
+          type: string
+      tags:
+      - attendees
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedAttendeeList'
+          description: ''
+  /api/attendees/{attendee_id}/bookings/:
+    get:
+      operationId: attendees_bookings_retrieve
+      description: API endpoint to get all bookings for a specific attendee
+      parameters:
+      - in: path
+        name: attendee_id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - attendees
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          description: No response body
+  /api/attendees/{id}/:
+    get:
+      operationId: attendees_retrieve
+      description: API endpoint to get a specific attendee
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - attendees
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Attendee'
+          description: ''
+  /api/booking/:
+    post:
+      operationId: booking_create
+      description: Create a new booking with payment
+      tags:
+      - booking
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          description: No response body
+  /api/bookings/:
+    get:
+      operationId: bookings_list
+      description: API endpoint to list customer tickets
+      parameters:
+      - name: ordering
+        required: false
+        in: query
+        description: Which field to use when ordering the results.
+        schema:
+          type: string
+      - name: page
+        required: false
+        in: query
+        description: A page number within the paginated result set.
+        schema:
+          type: integer
+      - name: search
+        required: false
+        in: query
+        description: A search term.
+        schema:
+          type: string
+      tags:
+      - bookings
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedCustomerTicketList'
+          description: ''
+  /api/bookings/{ticket_number}/:
+    get:
+      operationId: bookings_retrieve
+      description: API endpoint to get ticket by ticket number
+      parameters:
+      - in: path
+        name: ticket_number
+        schema:
+          type: string
+        required: true
+      tags:
+      - bookings
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerTicket'
+          description: ''
+  /api/cancel-ticket/{ticket_number}/:
+    post:
+      operationId: cancel_ticket_create
+      description: API endpoint to cancel a ticket
+      parameters:
+      - in: path
+        name: ticket_number
+        schema:
+          type: string
+        required: true
+      tags:
+      - cancel-ticket
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          description: No response body
+  /api/check-ticket/{ticket_number}/:
+    get:
+      operationId: check_ticket_retrieve
+      description: API endpoint to check ticket status
+      parameters:
+      - in: path
+        name: ticket_number
+        schema:
+          type: string
+        required: true
+      tags:
+      - check-ticket
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          description: No response body
+  /api/conferences/:
+    get:
+      operationId: conferences_list
+      description: |-
+        List all available conferences with tickets.
+
+        Returns conferences that have available tickets, ordered by date.
+      parameters:
+      - name: ordering
+        required: false
+        in: query
+        description: Which field to use when ordering the results.
+        schema:
+          type: string
+      - name: page
+        required: false
+        in: query
+        description: A page number within the paginated result set.
+        schema:
+          type: integer
+      - name: search
+        required: false
+        in: query
+        description: A search term.
+        schema:
+          type: string
+      tags:
+      - conferences
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedConferenceList'
+          description: ''
+  /api/conferences/{conference_id}/bookings/:
+    get:
+      operationId: conferences_bookings_retrieve
+      description: API endpoint to get all bookings for a specific conference
+      parameters:
+      - in: path
+        name: conference_id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - conferences
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          description: No response body
+  /api/conferences/{conference_id}/tickets/:
+    get:
+      operationId: conferences_tickets_list
+      description: API endpoint to list tickets for a specific conference
+      parameters:
+      - in: path
+        name: conference_id
+        schema:
+          type: integer
+        required: true
+      - name: ordering
+        required: false
+        in: query
+        description: Which field to use when ordering the results.
+        schema:
+          type: string
+      - name: page
+        required: false
+        in: query
+        description: A page number within the paginated result set.
+        schema:
+          type: integer
+      - name: search
+        required: false
+        in: query
+        description: A search term.
+        schema:
+          type: string
+      tags:
+      - conferences
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedTicketsList'
+          description: ''
+  /api/conferences/{id}/:
+    get:
+      operationId: conferences_retrieve
+      description: |-
+        Get detailed information about a specific conference.
+
+        Returns conference details including ticket availability and pricing.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - conferences
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Conference'
+          description: ''
+  /api/conferences/all/:
+    get:
+      operationId: conferences_all_list
+      description: API endpoint to list all conferences (including sold out)
+      parameters:
+      - name: ordering
+        required: false
+        in: query
+        description: Which field to use when ordering the results.
+        schema:
+          type: string
+      - name: page
+        required: false
+        in: query
+        description: A page number within the paginated result set.
+        schema:
+          type: integer
+      - name: search
+        required: false
+        in: query
+        description: A search term.
+        schema:
+          type: string
+      tags:
+      - conferences
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedConferenceList'
+          description: ''
+  /api/conferences/search/:
+    get:
+      operationId: conferences_search_retrieve
+      description: API endpoint to search conferences by name or location
+      tags:
+      - conferences
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          description: No response body
+  /api/payments/:
+    get:
+      operationId: payments_list
+      description: API endpoint to list payments
+      parameters:
+      - name: ordering
+        required: false
+        in: query
+        description: Which field to use when ordering the results.
+        schema:
+          type: string
+      - name: page
+        required: false
+        in: query
+        description: A page number within the paginated result set.
+        schema:
+          type: integer
+      - name: search
+        required: false
+        in: query
+        description: A search term.
+        schema:
+          type: string
+      tags:
+      - payments
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedPaymentList'
+          description: ''
+  /api/payments/{id}/:
+    get:
+      operationId: payments_retrieve
+      description: API endpoint to get a specific payment
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - payments
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Payment'
+          description: ''
+  /api/stats/:
+    get:
+      operationId: stats_retrieve
+      description: API endpoint for comprehensive statistics
+      tags:
+      - stats
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          description: No response body
+  /api/tickets/:
+    get:
+      operationId: tickets_list
+      description: API endpoint to list all tickets
+      parameters:
+      - name: ordering
+        required: false
+        in: query
+        description: Which field to use when ordering the results.
+        schema:
+          type: string
+      - name: page
+        required: false
+        in: query
+        description: A page number within the paginated result set.
+        schema:
+          type: integer
+      - name: search
+        required: false
+        in: query
+        description: A search term.
+        schema:
+          type: string
+      tags:
+      - tickets
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedTicketsList'
+          description: ''
+components:
+  schemas:
+    Attendee:
+      type: object
+      description: Serializer for Attendee model
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        first_name:
+          type: string
+          maxLength: 100
+        last_name:
+          type: string
+          maxLength: 100
+        email:
+          type: string
+          format: email
+          maxLength: 254
+        full_name:
+          type: string
+          readOnly: true
+        total_bookings:
+          type: string
+          readOnly: true
+      required:
+      - email
+      - first_name
+      - full_name
+      - id
+      - last_name
+      - total_bookings
+    Conference:
+      type: object
+      description: Serializer for Conference model
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          maxLength: 200
+        date:
+          type: string
+          format: date
+        location:
+          type: string
+          maxLength: 200
+        tickets_available:
+          type: string
+          readOnly: true
+        ticket_price:
+          type: string
+          readOnly: true
+        total_tickets:
+          type: string
+          readOnly: true
+      required:
+      - date
+      - id
+      - location
+      - name
+      - ticket_price
+      - tickets_available
+      - total_tickets
+    CustomerTicket:
+      type: object
+      description: Serializer for CustomerTicket model
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        attendee:
+          allOf:
+          - $ref: '#/components/schemas/Attendee'
+          readOnly: true
+        ticket:
+          type: integer
+        conference_name:
+          type: string
+          readOnly: true
+        conference_date:
+          type: string
+          format: date
+          readOnly: true
+        conference_location:
+          type: string
+          readOnly: true
+        ticket_price:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,4}(?:\.\d{0,2})?$
+          readOnly: true
+        ticket_number:
+          type: string
+          maxLength: 50
+        ticket_status:
+          $ref: '#/components/schemas/TicketStatusEnum'
+        purchase_date:
+          type: string
+          format: date-time
+          readOnly: true
+      required:
+      - attendee
+      - conference_date
+      - conference_location
+      - conference_name
+      - id
+      - purchase_date
+      - ticket
+      - ticket_number
+      - ticket_price
+    PaginatedAttendeeList:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=4
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=2
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Attendee'
+    PaginatedConferenceList:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=4
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=2
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Conference'
+    PaginatedCustomerTicketList:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=4
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=2
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/CustomerTicket'
+    PaginatedPaymentList:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=4
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=2
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Payment'
+    PaginatedTicketsList:
+      type: object
+      required:
+      - count
+      - results
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=4
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=2
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Tickets'
+    Payment:
+      type: object
+      description: Serializer for Payment model
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        attendee:
+          allOf:
+          - $ref: '#/components/schemas/Attendee'
+          readOnly: true
+        attendee_name:
+          type: string
+          readOnly: true
+        attendee_email:
+          type: string
+          readOnly: true
+        amount:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,6}(?:\.\d{0,2})?$
+        payment_date:
+          type: string
+          format: date-time
+          readOnly: true
+        payment_method:
+          type: string
+          maxLength: 50
+      required:
+      - amount
+      - attendee
+      - attendee_email
+      - attendee_name
+      - id
+      - payment_date
+      - payment_method
+    TicketStatusEnum:
+      enum:
+      - purchased
+      - cancelled
+      type: string
+      description: |-
+        * `purchased` - Purchased
+        * `cancelled` - Cancelled
+    Tickets:
+      type: object
+      description: Serializer for Tickets model
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        conference:
+          type: integer
+        conference_name:
+          type: string
+          readOnly: true
+        conference_date:
+          type: string
+          format: date
+          readOnly: true
+        conference_location:
+          type: string
+          readOnly: true
+        price:
+          type: integer
+          maximum: 9223372036854775807
+          minimum: -9223372036854775808
+          format: int64
+        quantity_available:
+          type: integer
+          maximum: 9223372036854775807
+          minimum: 0
+          format: int64
+      required:
+      - conference
+      - conference_date
+      - conference_location
+      - conference_name
+      - id
+      - price
+      - quantity_available
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: sessionid
+tags:
+- name: conferences
+  description: Conference management endpoints
+- name: tickets
+  description: Ticket management endpoints
+- name: bookings
+  description: Booking management endpoints
+- name: attendees
+  description: Attendee management endpoints
+- name: payments
+  description: Payment tracking endpoints
+- name: utilities
+  description: Utility and stats endpoints

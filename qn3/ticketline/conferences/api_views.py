@@ -5,6 +5,8 @@ from rest_framework.views import APIView
 from django.db import transaction
 from django.shortcuts import get_object_or_404
 from django.db.models import Sum, Count, Q
+from drf_spectacular.utils import extend_schema, OpenApiParameter, OpenApiExample
+from drf_spectacular.openapi import OpenApiTypes
 from .models import Conference, Tickets, Attendee, CustomerTicket, Payment
 from .serializers import (
     ConferenceSerializer, TicketsSerializer, AttendeeSerializer,
@@ -15,7 +17,11 @@ from .views import generate_ticket_number
 
 
 class ConferenceListAPIView(generics.ListAPIView):
-    """API endpoint to list all available conferences"""
+    """
+    List all available conferences with tickets.
+    
+    Returns conferences that have available tickets, ordered by date.
+    """
     serializer_class = ConferenceSerializer
     
     def get_queryset(self):
@@ -26,7 +32,11 @@ class ConferenceListAPIView(generics.ListAPIView):
 
 
 class ConferenceDetailAPIView(generics.RetrieveAPIView):
-    """API endpoint to get a specific conference"""
+    """
+    Get detailed information about a specific conference.
+    
+    Returns conference details including ticket availability and pricing.
+    """
     queryset = Conference.objects.all()
     serializer_class = ConferenceSerializer
 
@@ -95,7 +105,15 @@ class PaymentDetailAPIView(generics.RetrieveAPIView):
 
 
 class BookingAPIView(APIView):
-    """API endpoint to create a new booking"""
+    """
+    Create a new conference booking.
+    
+    This endpoint handles the complete booking process including:
+    - Attendee creation or retrieval
+    - Ticket reservation
+    - Payment processing
+    - Inventory management
+    """
     
     def post(self, request):
         """Create a new booking with payment"""

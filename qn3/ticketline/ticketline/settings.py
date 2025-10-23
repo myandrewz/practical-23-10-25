@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',        # Django REST Framework
     'corsheaders',          # CORS headers for API
+    'drf_spectacular',      # Swagger/OpenAPI documentation
     'conferences',
 ]
 
@@ -159,7 +160,30 @@ REST_FRAMEWORK = {
         'rest_framework.filters.SearchFilter',
         'rest_framework.filters.OrderingFilter',
     ],
-    'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema',
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',  # Enable Swagger
+}
+
+# drf-spectacular settings for Swagger/OpenAPI
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'TicketLine Conference Booking API',
+    'DESCRIPTION': 'A comprehensive API for booking conference tickets with multi-step checkout process.',
+    'VERSION': '1.0.0',
+    'SERVE_INCLUDE_SCHEMA': False,
+    'SCHEMA_PATH_PREFIX': '/api/',
+    'COMPONENT_SPLIT_REQUEST': True,
+    'SWAGGER_UI_SETTINGS': {
+        'deepLinking': True,
+        'persistAuthorization': True,
+        'displayOperationId': False,
+    },
+    'TAGS': [
+        {'name': 'conferences', 'description': 'Conference management endpoints'},
+        {'name': 'tickets', 'description': 'Ticket management endpoints'},
+        {'name': 'bookings', 'description': 'Booking management endpoints'},
+        {'name': 'attendees', 'description': 'Attendee management endpoints'},
+        {'name': 'payments', 'description': 'Payment tracking endpoints'},
+        {'name': 'utilities', 'description': 'Utility and stats endpoints'},
+    ],
 }
 
 # CORS Configuration (for frontend integration)
