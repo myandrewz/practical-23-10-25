@@ -1,0 +1,88 @@
+[
+  {
+    "ContainingType": "questionthree.Routes.TicketLineRoute\u002B\u003C\u003Ec__DisplayClass0_0",
+    "Method": "\u003CMapTicketLineRoutes\u003Eb__1",
+    "RelativePath": "api/v1/confirm/{reservationId}",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "reservationId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "questionthree.Routes.TicketLineRoute\u002B\u003C\u003Ec",
+    "Method": "\u003CMapTicketLineRoutes\u003Eb__0_2",
+    "RelativePath": "api/v1/purchase/{purchaseId}",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "purchaseId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "questionthree.Models.Purchase",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "questionthree.Routes.TicketLineRoute\u002B\u003C\u003Ec",
+    "Method": "\u003CMapTicketLineRoutes\u003Eb__0_3",
+    "RelativePath": "api/v1/purchases",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[questionthree.Models.Purchase, questionthree, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "questionthree.Routes.TicketLineRoute\u002B\u003C\u003Ec",
+    "Method": "\u003CMapTicketLineRoutes\u003Eb__0_0",
+    "RelativePath": "api/v1/reserve",
+    "HttpMethod": "POST",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "reservation",
+        "Type": "questionthree.Models.Reservation",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  }
+]
