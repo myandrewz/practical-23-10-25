@@ -7,28 +7,28 @@ using NssfTechInterview.Models;
 
 namespace NssfTechInterview.DatabaseLayer
 {
-    public static class TicketRepository
+    public class TicketRepositoryImpl : ITicketRepository
     {
-        private static readonly List<TicketReservation> _reservations = new();
+        private  readonly List<TicketReservation> _reservations = new();
 
-        public static TicketReservation Add(TicketReservation reservation)
+        public  TicketReservation Add(TicketReservation reservation)
         {
             _reservations.Add(reservation);
             return reservation;
         }
 
-        public static TicketReservation? Get(Guid id)
+        public  TicketReservation? Get(Guid id)
         {
             return _reservations.FirstOrDefault(r => r.Id == id);
         }
 
-        public static void Update(TicketReservation reservation)
+        public  void Update(TicketReservation reservation)
         {
             var index = _reservations.FindIndex(r => r.Id == reservation.Id);
             if (index != -1)
                 _reservations[index] = reservation;
         }
 
-        public static IEnumerable<TicketReservation> GetAll() => _reservations;
+        public  IEnumerable<TicketReservation> GetAll() => _reservations;
     }
 }

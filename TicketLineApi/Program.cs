@@ -1,3 +1,4 @@
+using NssfTechInterview.DatabaseLayer;
 using NssfTechInterview.Service;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,6 +12,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddTransient<ITicketService, TicketServiceImpl>();
 builder.Services.AddTransient<IPaymentService, PaymentServiceImpl>();
+builder.Services.AddTransient<ITicketRepository, TicketRepositoryImpl>();
 
 var app = builder.Build();
 

@@ -13,9 +13,11 @@ namespace NssfTechInterview.Service
     {
 
         private readonly IPaymentService _paymentService;
-        public TicketServiceImpl(IPaymentService paymentService) {
+        private readonly ITicketRepository _repo;
+        public TicketServiceImpl(IPaymentService paymentService, ITicketRepository repo) {
         
             _paymentService = paymentService;
+            _repo = repo;
         }
 
         public TicketReservation ReserveTickets(TicketReservationRequest request)
@@ -31,14 +33,14 @@ namespace NssfTechInterview.Service
                 TotalAmount = total
             };
 
-            TicketRepository.Add(reservation);
+            _repo.Add(reservation);
 
             return reservation;
         }
 
         public bool CompletePayment(Guid reservationId)
         {
-            var reservation = TicketRepository.Get(reservationId);
+            var reservation = _repo.Get(reservationId);
             if (reservation == null || reservation.Status != ReservationStatus.Pending)
                 return false;
 
@@ -46,7 +48,7 @@ namespace NssfTechInterview.Service
             if (success)
             {
                 reservation.Status = ReservationStatus.Paid;
-                TicketRepository.Update(reservation);
+                _repo.Update(reservation);
             }
 
             return success;
