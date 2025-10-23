@@ -21,7 +21,7 @@ static void Run()
 public class ZeroEvenOdd
 {
     //indicates the length of the output string
-    private int n;
+    private int outputLength;
 
     //synchronization flag to indicate whose turn it is to print
     // 0 = zero, 1 = odd, 2 = even
@@ -33,7 +33,7 @@ public class ZeroEvenOdd
     public ZeroEvenOdd(int n)
     {
         //initialize n to the input value
-        this.n = n;
+        this.outputLength = n;
     }
 
     /// <summary>
@@ -42,7 +42,7 @@ public class ZeroEvenOdd
     /// <param name="printNumber"></param>
     public void Zero(Action<int> printNumber)
     {
-        for (int i = 0; i < n; i++)
+        for (int i = 0; i < outputLength; i++)
         {
             while (turn != 0) { }
             printNumber(0);
@@ -57,7 +57,7 @@ public class ZeroEvenOdd
     /// <param name="printNumber"></param>
     public void Even(Action<int> printNumber)
     {
-        for (int i = 2; i <= n; i += 2)
+        for (int i = 2; i <= outputLength; i += 2)
         {
             //poll for turn to print even
             while (turn != 2) { }
@@ -72,7 +72,7 @@ public class ZeroEvenOdd
     /// <param name="printNumber"></param>
     public void Odd(Action<int> printNumber)
     {
-        for (int i = 1; i <= n; i += 2)
+        for (int i = 1; i <= outputLength; i += 2)
         {
             //poll for turn to print even
             while (turn != 1) { }
