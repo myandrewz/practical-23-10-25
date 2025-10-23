@@ -1,7 +1,5 @@
 ﻿The ticket line is a dotnet core project that targets .NET 8.0 and uses C# 12.0 as the programming language version.
 
-To set up a .NET 8.0 project with C# 12.0, ensure your project file (.csproj) includes the following configurations:
-
 The implementation makes use of a minimal API approach to create a simple web application that responds with "Hello, World!" when accessed via the root URL.
 
 With 4 endpoints;
