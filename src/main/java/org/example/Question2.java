@@ -4,7 +4,7 @@ import java.util.concurrent.Semaphore;
 import java.util.function.IntConsumer;
 
 /**
- * Question2: Implement ZeroEvenOdd to print the sequence 01020304... with total length 2n.
+ * Question2: Implement Question2 to print the sequence 01020304... with total length 2n.
  *
  * The same instance is used by three threads:
  *  - zero(): prints only 0s, exactly n times
@@ -13,7 +13,7 @@ import java.util.function.IntConsumer;
  *
  * Expected combined output: 0 1 0 2 0 3 0 4 ... (without spaces)
  */
-public class ZeroEvenOdd {
+public class Question2 {
     private final int n;
 
     // Semaphores to coordinate order: zero -> (odd|even) -> zero -> ...
@@ -21,7 +21,7 @@ public class ZeroEvenOdd {
     private final Semaphore oddSem = new Semaphore(0);
     private final Semaphore evenSem = new Semaphore(0);
 
-    public ZeroEvenOdd(int n) {
+    public Question2(int n) {
         this.n = n;
     }
 
