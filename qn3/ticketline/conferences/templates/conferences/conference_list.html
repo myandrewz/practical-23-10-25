@@ -1,0 +1,64 @@
+{% extends 'conferences/base.html' %}
+
+{% block title %}Select Conference - TicketLine{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <!-- Step Indicator -->
+        <div class="step-indicator">
+            <div class="step active">1. Select Conference</div>
+            <div class="step">2. Your Details</div>
+            <div class="step">3. Payment</div>
+            <div class="step">4. Success</div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h3 class="text-center">Choose Your Conference</h3>
+            </div>
+            <div class="card-body">
+                {% if conferences %}
+                    <div class="row">
+                        {% for conference in conferences %}
+                            <div class="col-md-6 mb-4">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ conference.name }}</h5>
+                                        <p class="card-text">
+                                            <strong>Date:</strong> {{ conference.date|date:"F d, Y" }}<br>
+                                            <strong>Location:</strong> {{ conference.location }}
+                                        </p>
+                                        {% if conference.tickets_set.first %}
+                                            <p class="card-text">
+                                                <strong>Price:</strong> ${{ conference.tickets_set.first.price }}<br>
+                                                <strong>Available:</strong> {{ conference.tickets_set.first.quantity_available }} tickets
+                                            </p>
+                                            {% if conference.tickets_set.first.quantity_available > 0 %}
+                                                <a href="{% url 'attendee_details' conference.id %}" class="btn btn-primary">
+                                                    Select This Conference
+                                                </a>
+                                            {% else %}
+                                                <button class="btn btn-secondary" disabled>
+                                                    Sold Out
+                                                </button>
+                                            {% endif %}
+                                        {% else %}
+                                            <p class="text-muted">No tickets available</p>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <div class="text-center">
+                        <h4>No conferences available at the moment</h4>
+                        <p>Please check back later for upcoming events.</p>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

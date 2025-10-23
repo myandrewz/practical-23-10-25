@@ -1,0 +1,63 @@
+{% extends 'conferences/base.html' %}
+
+{% block title %}Booking Confirmed - TicketLine{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <!-- Step Indicator -->
+        <div class="step-indicator">
+            <div class="step completed">1. Select Conference</div>
+            <div class="step completed">2. Your Details</div>
+            <div class="step completed">3. Payment</div>
+            <div class="step completed">4. Success</div>
+        </div>
+
+        <div class="card">
+            <div class="card-body text-center">
+                <div class="alert alert-success">
+                    <h1>🎉 Booking Confirmed!</h1>
+                    <p class="lead">Your conference ticket has been successfully purchased.</p>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5>Conference Details:</h5>
+                        <p>
+                            <strong>{{ customer_ticket.ticket.conference.name }}</strong><br>
+                            {{ customer_ticket.ticket.conference.date|date:"F d, Y" }}<br>
+                            {{ customer_ticket.ticket.conference.location }}
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>Ticket Information:</h5>
+                        <p>
+                            <strong>Ticket Number:</strong> {{ customer_ticket.ticket_number }}<br>
+                            <strong>Attendee:</strong> {{ customer_ticket.attendee.first_name }} {{ customer_ticket.attendee.last_name }}<br>
+                            <strong>Email:</strong> {{ customer_ticket.attendee.email }}
+                        </p>
+                    </div>
+                </div>
+
+                <div class="alert alert-info">
+                    <h5>Payment Confirmed:</h5>
+                    <p>
+                        <strong>Amount Paid:</strong> ${{ payment.amount }}<br>
+                        <strong>Payment Method:</strong> {{ payment.payment_method|title }}<br>
+                        <strong>Transaction Date:</strong> {{ payment.payment_date|date:"F d, Y g:i A" }}
+                    </p>
+                </div>
+
+                <div class="mt-4">
+                    <p class="text-muted">
+                        A confirmation email has been sent to {{ customer_ticket.attendee.email }}
+                    </p>
+                    <a href="{% url 'conference_list' %}" class="btn btn-primary">
+                        Book Another Conference
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

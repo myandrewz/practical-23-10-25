@@ -1,0 +1,67 @@
+{% extends 'conferences/base.html' %}
+
+{% block title %}Payment - TicketLine{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <!-- Step Indicator -->
+        <div class="step-indicator">
+            <div class="step completed">1. Select Conference</div>
+            <div class="step completed">2. Your Details</div>
+            <div class="step active">3. Payment</div>
+            <div class="step">4. Success</div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h3 class="text-center">Payment Details</h3>
+            </div>
+            <div class="card-body">
+                <!-- Order Summary -->
+                <div class="alert alert-info">
+                    <h5>Order Summary:</h5>
+                    <strong>{{ conference.name }}</strong><br>
+                    <small>{{ conference.date|date:"F d, Y" }} - {{ conference.location }}</small><br>
+                    <strong>Attendee:</strong> {{ attendee.first_name }} {{ attendee.last_name }}<br>
+                    <strong>Email:</strong> {{ attendee.email }}<br>
+                    <hr>
+                    <h4>Total Amount: ${{ ticket.price }}</h4>
+                </div>
+
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="payment_method" class="form-label">Payment Method *</label>
+                        <select class="form-select" id="payment_method" name="payment_method" required>
+                            <option value="">Choose payment method...</option>
+                            <option value="credit_card">Credit Card</option>
+                            <option value="debit_card">Debit Card</option>
+                            <option value="paypal">PayPal</option>
+                            <option value="bank_transfer">Bank Transfer</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="terms" name="terms" required>
+                            <label class="form-check-label" for="terms">
+                                I agree to the terms and conditions *
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <a href="{% url 'attendee_details' conference.id %}" class="btn btn-secondary me-md-2">
+                            Back
+                        </a>
+                        <button type="submit" class="btn btn-success">
+                            Complete Payment - ${{ ticket.price }}
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

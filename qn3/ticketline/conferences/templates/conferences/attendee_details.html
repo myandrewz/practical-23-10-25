@@ -1,0 +1,71 @@
+{% extends 'conferences/base.html' %}
+
+{% block title %}Your Details - TicketLine{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <!-- Step Indicator -->
+        <div class="step-indicator">
+            <div class="step completed">1. Select Conference</div>
+            <div class="step active">2. Your Details</div>
+            <div class="step">3. Payment</div>
+            <div class="step">4. Success</div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h3 class="text-center">Your Details</h3>
+            </div>
+            <div class="card-body">
+                <!-- Selected Conference Info -->
+                <div class="alert alert-info">
+                    <h5>Selected Conference:</h5>
+                    <strong>{{ conference.name }}</strong><br>
+                    <small>{{ conference.date|date:"F d, Y" }} - {{ conference.location }}</small><br>
+                    <strong>Price: ${{ ticket.price }}</strong>
+                </div>
+
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="first_name" class="form-label">First Name *</label>
+                        <input type="text" class="form-control" id="first_name" name="first_name" 
+                               value="{{ form.first_name.value|default:'' }}" required>
+                        {% if form.first_name.errors %}
+                            <div class="text-danger">{{ form.first_name.errors }}</div>
+                        {% endif %}
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="last_name" class="form-label">Last Name *</label>
+                        <input type="text" class="form-control" id="last_name" name="last_name" 
+                               value="{{ form.last_name.value|default:'' }}" required>
+                        {% if form.last_name.errors %}
+                            <div class="text-danger">{{ form.last_name.errors }}</div>
+                        {% endif %}
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email Address *</label>
+                        <input type="email" class="form-control" id="email" name="email" 
+                               value="{{ form.email.value|default:'' }}" required>
+                        {% if form.email.errors %}
+                            <div class="text-danger">{{ form.email.errors }}</div>
+                        {% endif %}
+                    </div>
+
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <a href="{% url 'conference_list' %}" class="btn btn-secondary me-md-2">
+                            Back
+                        </a>
+                        <button type="submit" class="btn btn-primary">
+                            Continue to Payment
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
